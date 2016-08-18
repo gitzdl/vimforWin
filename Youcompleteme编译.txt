@@ -1,0 +1,23 @@
+安装X64
+python
+LLVM
+cmake
+Visual Studio 2015
+7-zip
+
+64位
+mkdir ycmd_build
+cd ycmd_build
+cmake -G "Visual Studio 14 Win64" -DPATH_TO_LLVM_ROOT="C:\Program Files\LLVM" . ..\third_party\ycmd\cpp
+cmake --build . --target ycm_core --config Release
+
+
+32位
+python2.7.9
+cmake -G "Visual Studio 14" -DPATH_TO_LLVM_ROOT="C:\Program Files (x86)\LLVM" . ..\third_party\ycmd\cpp
+cmake --build . --target ycm_core --config Release
+
+python3.4.1 工作正常
+python3.5.2 找不到库
+cmake -G "Visual Studio 14" -DPATH_TO_LLVM_ROOT="C:\Program Files (x86)\LLVM" -DUSE_PYTHON2=OFF . ..\third_party\ycmd\cpp
+cmake --build . --target ycm_core --config Release
